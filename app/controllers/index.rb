@@ -1,5 +1,4 @@
 get '/' do
-  "Hello"
   if current_user
     redirect '/welcome'
   else
@@ -8,11 +7,24 @@ get '/' do
 end
 
 get '/welcome' do
-  #Login to display favorites as well as have a link to click surf spots
+  @spots = Favorite.where(user_id: current_user.id)
+  @spot_names = @spots.
+  erb :welcome
 end
 
 get '/signin' do
   erb :signin
+end
+
+get '/spots' do
+  @spots = Spot.all
+  erb :spots
+end
+
+
+get '/spots/:id' do
+  @spot = Spot.find(params[:id])
+  erb :spot_report
 end
 
 
@@ -42,4 +54,9 @@ post '/signup' do
   end
   @error = "Sorry! Your passwords do not match."
   erb :signup
+end
+
+delete '/users/:id' do
+  session[:user_id] = nil
+  redirect '/'
 end

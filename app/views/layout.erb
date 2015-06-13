@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <!--
     application.css is where you put your styles
   -->
@@ -18,6 +19,16 @@
   <title></title>
 </head>
 <body>
+    <div id="logout">
+    <% if current_user %>
+        <form method="POST" action="/users/<%= current_user.id %>">
+          <input type="hidden" name="_method" value="DELETE">
+          <input class="btn btn-info" type="submit" value="Logout">
+        </form>
+    <% end %>
+  </div>
+
   <%= yield %>
+
 </body>
 </html>

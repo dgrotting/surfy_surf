@@ -1,0 +1,5 @@
+<h1>Hi Surf Spots</h1>
+
+  <% @spots.each do |spot| %>
+    <p><a href= '/spots/<%= spot.id %>'> <%= spot.name %></a>
+  <% end %>
