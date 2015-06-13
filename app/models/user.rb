@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
     self.password_hash = @password
   end
 
+  has_many :favorites
   has_many :spots, through: :favorites
   has_many :comments
 
