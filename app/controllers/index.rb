@@ -8,7 +8,7 @@ end
 
 get '/welcome' do
   @spots = Favorite.where(user_id: current_user.id)
-  @spot_names = @spots.
+  # @spot_names = @spots.
   erb :welcome
 end
 
@@ -21,9 +21,15 @@ get '/spots' do
   erb :spots
 end
 
-
 get '/spots/:id' do
   @spot = Spot.find(params[:id])
+  @comments = Comment.where(spot_id: params[:id])
+  erb :spot_report
+end
+
+post '/spots/:id' do
+  @spot = Spot.find(params[:id])
+  @comments = Comment.where(spot_id: params[:id])
   erb :spot_report
 end
 
@@ -56,7 +62,15 @@ post '/signup' do
   erb :signup
 end
 
+get '/users/:id' do
+  "Coming soon to theaters near you"
+end
+
 delete '/users/:id' do
   session[:user_id] = nil
   redirect '/'
+end
+
+get '/users/:id/favorites' do
+  erb :favorites
 end

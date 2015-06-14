@@ -1,0 +1,11 @@
+<% if @comments.any? %>
+<% @comments.each do |comment| %>
+  <ul>
+    <li>
+        <%= comment.body %>
+    </li>
+  </ul>
+<% end %>
+<% else %>
+<p> Nobody has commented on this spot - leave a comment!</p>
+<% end %>

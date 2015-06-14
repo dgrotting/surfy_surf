@@ -1,5 +1,7 @@
+<div class="container">
 <h1>Hi Surf Spots</h1>
 
   <% @spots.each do |spot| %>
-    <p><a href= '/spots/<%= spot.id %>'> <%= spot.name %></a>
+    <p><a href= '/spots/<%= spot.id %>'> <%= spot.name %></a></p>
   <% end %>
+</div>

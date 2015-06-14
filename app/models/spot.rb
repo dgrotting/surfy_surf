@@ -1,6 +1,6 @@
 class Spot < ActiveRecord::Base
   validates :name, presence: true
-  validates :script, presence: true
+  # validates :script, presence: true
 
   has_many :favorites
   has_many :users, through: :favorites

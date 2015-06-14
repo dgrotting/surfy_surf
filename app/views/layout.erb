@@ -19,12 +19,14 @@
   <title></title>
 </head>
 <body>
-    <div id="logout">
+    <div class="logout">
     <% if current_user %>
         <form method="POST" action="/users/<%= current_user.id %>">
           <input type="hidden" name="_method" value="DELETE">
           <input class="btn btn-info" type="submit" value="Logout">
+          <a class="btn btn-info" href = "/">Home</a>
         </form>
+
     <% end %>
   </div>
 

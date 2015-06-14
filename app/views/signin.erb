@@ -1,15 +1,19 @@
+
+<div class="signin">
 <div class="container">
 
   <%= @error %>
+  <h3>Sign in</h3>
    <form class="form-inline" action="/signin" method="post">
     <input class="form-control" type="text" name="email" placeholder="Email" /> <br>
     <input class="form-control" type="password" name="password_hash" placeholder="Password" /> <br>
     <input class="btn btn-info" type="submit" value="Sign In" />
   </form>
 
-    <h4>New to Surfy Surf? Sign Up below!</h4>
+    <h4>New here? Sign Up below!</h4>
 
-   <form action="/signup"><input class="btn btn-info" type="submit" value="Sign Up!" />
+   <form action="/signup"><input class="btn btn-info" type="submit" value="Sign Up!" /></form>
 
 
+</div>
 </div>
