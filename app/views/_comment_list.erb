@@ -2,6 +2,8 @@
 <% @comments.each do |comment| %>
   <ul>
     <li>
+        <%= User.find_by(id: comment.user_id).first_name %>
+        <%= User.find_by(id: comment.user_id).last_name %> :
         <%= comment.body %>
     </li>
   </ul>
