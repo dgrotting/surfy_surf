@@ -16,11 +16,6 @@ get '/signin' do
   erb :signin
 end
 
-get '/spots' do
-  @spots = Spot.all
-  erb :spots
-end
-
 get '/spots/:id' do
   @spot = Spot.find(params[:id])
   @comments = Comment.where(spot_id: params[:id])
@@ -28,9 +23,14 @@ get '/spots/:id' do
 end
 
 post '/spots/:id' do
-  @spot = Spot.find(params[:id])
-  @comments = Comment.where(spot_id: params[:id])
-  erb :spot_report
+  Comment.create(body: params[:body], spot_id: params[:id], user_id: current_user.id)
+
+  redirect "/spots/#{params[:id]}"
+end
+
+get '/spots' do
+  @spots = Spot.all
+  erb :spots
 end
 
 

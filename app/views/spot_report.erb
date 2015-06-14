@@ -7,6 +7,12 @@
 
 <%= erb :_comment_list %>
 
+<form class="form-inline" action="/spots/<%= @spot.id %>" method="post">
+    <input class="form-control" type="text" name="body" placeholder="Comment here on this break!" /> <br>
+    <input class="btn btn-info" type="submit" value="Comment" />
+  </form>
+
+
 </div>
 
 
