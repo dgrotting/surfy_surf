@@ -26,6 +26,12 @@ Spot.create(name: "Maverick's", script: "<div class=\"slwd_bt\"><script type=\"t
 
 
 
+User.create(email: "dgrotting@gmail.com", first_name: "David", last_name: "Grotting", password_hash: "password")
+
+User.create(email: "vivek@gmail.com", first_name: "Vivek", last_name: "Poola", password_hash: "password")
+
+User.create(email: "ron@gmail.com", first_name: "Ron", last_name: "Burgundy", password_hash: "password")
+
 
 
 
