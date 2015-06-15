@@ -1,8 +1,13 @@
 <div class="container">
 
-    <h1>Here are <%= current_user.first_name %>'s favorites</h1>
+  <h1><%= @user.first_name %> <%= @user.last_name %></h1>
 
-      <% @favorites.each do |favorite| %>
+  <h3>Favorites:</h3>
+    <% if @favorites.empty? %>
+      <h4>They ain't got no favorites</h4>
+      <img src="http://i.imgur.com/Xl8pjnl.gif">
+    <% else %>
+        <% @favorites.each do |favorite| %>
 
         <div class="favorites" style = "width: 240px;" >
           <p>
@@ -14,5 +19,5 @@
         </div>
 
       <% end %>
-
+    <% end %>
 </div>

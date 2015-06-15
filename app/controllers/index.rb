@@ -63,7 +63,10 @@ post '/signup' do
 end
 
 get '/users/:id' do
-  "Coming soon to theaters near you"
+  @user = User.find(params[:id])
+  @favorites = User.find(params[:id]).favorites
+
+  erb :user
 end
 
 delete '/users/:id' do
@@ -72,5 +75,6 @@ delete '/users/:id' do
 end
 
 get '/users/:id/favorites' do
+  @favorites = current_user.favorites
   erb :favorites
 end
