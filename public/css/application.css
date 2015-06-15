@@ -17,7 +17,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#88c4e2', end
 }
 
 
-.signin {
+.signinpage {
   background: url('http://www.julien-bacal.com/wp-content/uploads/2014/12/poster-surf-01.jpg')no-repeat;
   background-size: cover;
   background-position: 0px -400px;
@@ -33,7 +33,46 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#88c4e2', end
   padding-bottom: 400px;
 }
 
+.signup h1 {
+  color: white;
+}
+
 .logout {
   float: right;
   padding: 20px;
 }
+
+.favorites {
+  float: left;
+  margin: 10px;
+}
+
+.comments {
+  float: left;
+  width: 350px;
+  margin-left: 40px;
+
+}
+
+.signinform {
+  width: 400px;
+  float: left;
+}
+
+.signinform h2 {
+  color: white;
+}
+
+.signinform h4 {
+  color: white;
+}
+
+.home_image {
+  width: 500px;
+  float: left;
+  margin: 30px
+}
+
+
+
+

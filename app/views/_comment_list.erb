@@ -1,13 +1,21 @@
+
 <% if @comments.any? %>
 <% @comments.each do |comment| %>
   <ul>
     <li>
-        <%= User.find_by(id: comment.user_id).first_name %>
-        <%= User.find_by(id: comment.user_id).last_name %> :
+      <strong>
+        <a href="/users/<%=comment.user_id%>">
+          <%= User.find_by(id: comment.user_id).first_name %>
+          <%= User.find_by(id: comment.user_id).last_name %> :
+        </a>
+      </strong>
         <%= comment.body %>
+        <br>
+        <%= comment.created_at %>
     </li>
   </ul>
 <% end %>
 <% else %>
 <p> Nobody has commented on this spot - leave a comment!</p>
 <% end %>
+
