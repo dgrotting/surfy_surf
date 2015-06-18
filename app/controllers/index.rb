@@ -16,6 +16,12 @@ get '/signin' do
   erb :signin
 end
 
+get '/spots/search' do
+  spotname = params[:spotname]
+  @spots = Spot.where("name like ?", "%#{spotname}%")
+  erb :spots
+end
+
 get '/spots/:id' do
   @spot = Spot.find(params[:id])
   @comments = Comment.where(spot_id: params[:id])
