@@ -19,7 +19,8 @@ end
 get '/spots/search' do
   spotname = params[:spotname]
   @spots = Spot.where("name like ?", "%#{spotname}%")
-  erb :spots
+  erb(:_spot_search_results, layout: false, locals: {spots: @spots})
+  # erb :spots
 end
 
 get '/spots/:id' do

@@ -1,0 +1,11 @@
+<div class="spot-list">
+  <% if @spots.length > 0 %>
+    <% @spots.each do |spot| %>
+          <h3>
+            <a href= '/spots/<%= spot.id %>'> <%= spot.name %></a>
+          </h3>
+    <% end %>
+  <% else %>
+    <h3>Sorry, no results. Please search again.</h3>
+  <% end %>
+</div>
