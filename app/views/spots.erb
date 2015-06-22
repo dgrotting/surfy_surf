@@ -1,12 +1,15 @@
 <div class="container">
   <h1>San Francisco Surf Spots</h1>
 
-    <form class="form-inline" action="/spots/search" method="get">
+    <form id="search-spots-form" class="form-inline" action="/spots/search" method="get">
         <input class="form-control" type="text" name="spotname" placeholder="Spot Name" /> <br>
-        <input class="btn btn-info" type="submit" value="Search" />
+        <input id="search-spots-button" class="btn btn-info" type="submit" value="Search" />
       </form>
 
+  <div class="spot-list">
     <% @spots.each do |spot| %>
       <h3><a href= '/spots/<%= spot.id %>'> <%= spot.name %></a></h3>
     <% end %>
+  </div>
+
 </div>

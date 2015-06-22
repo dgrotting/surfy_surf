@@ -19,7 +19,8 @@ end
 get '/spots/search' do
   spotname = params[:spotname]
   @spots = Spot.where("name like ?", "%#{spotname}%")
-  erb :spots
+  erb(:_spot_search_results, layout: false, locals: {spots: @spots})
+  # erb :spots
 end
 
 get '/spots/:id' do
@@ -29,9 +30,10 @@ get '/spots/:id' do
 end
 
 post '/spots/:id' do
-  Comment.create(body: params[:body], spot_id: params[:id], user_id: current_user.id)
-
-  redirect "/spots/#{params[:id]}"
+  @comment = Comment.create(body: params[:body], spot_id: params[:id], user_id: current_user.id)
+  p @comment
+  erb(:_new_comment, layout: false, locals: {comment: @comment})
+  # redirect "/spots/#{params[:id]}"
 end
 
 get '/spots' do

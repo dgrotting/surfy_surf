@@ -3,14 +3,19 @@
 
 <div class="favorites" style = "width: 240px;" ><%= @spot.script %></div>
 
+
+
 <div class="comments">
 
 <h3>Comments:</h3>
-<%= erb :_comment_list %>
 
-<form class="form" action="/spots/<%= @spot.id %>" method="post">
-    <input class="form-control" type="text" name="body" placeholder="Comment here on this break!" /> <br>
-    <input class="btn btn-info" type="submit" value="Comment" />
+<div class="comment-list">
+  <%= erb :_comment_list %>
+</div>
+
+<form class="form new-comment-form" action="/spots/<%= @spot.id %>" method="post">
+    <input class="form-control new-comment-input" type="text" name="body" placeholder="Comment here on this break!" /> <br>
+    <input class="btn btn-info new-comment-button" type="submit" value="Comment" />
   </form>
 
 </div>
