@@ -86,3 +86,11 @@ get '/users/:id/favorites' do
   @favorites = current_user.favorites
   erb :favorites
 end
+
+get '/reports' do
+  api = Spitcast.new
+  spots = api.all_reports.to_json
+  @spots = JSON.parse(spots)
+  p api.all_reports
+  erb :reports
+end
